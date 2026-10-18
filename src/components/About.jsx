@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
 import { links } from '../i18n/content'
-import { ChartIcon, TargetIcon, WorkflowIcon } from './Icons'
+import { ChartIcon, GraduationCapIcon, TargetIcon, WorkflowIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
@@ -14,9 +14,7 @@ function Portrait({ alt }) {
       {failed ? (
         // Fallback until public/raghd.jpg is added
         <div className="bg-dot-grid grid size-full place-items-center bg-linear-to-br from-accent/20 via-surface to-cyan/10">
-          <span dir="ltr" className="font-display text-7xl font-semibold text-fg/90">
-            RA<span className="text-accent">.</span>
-          </span>
+          <GraduationCapIcon className="size-28 text-accent-fg" strokeWidth="1.25" />
         </div>
       ) : (
         <img

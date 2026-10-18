@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
 import { ArrowIcon, ChevronDownIcon } from './Icons'
-import DashboardVisual from './DashboardVisual'
 import HeroBackground from './HeroBackground'
 import SocialLinks from './SocialLinks'
 
@@ -37,8 +36,8 @@ export default function Hero() {
     >
       <HeroBackground />
 
-      <div className="container-page grid items-center gap-14 pt-28 pb-24 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-7">
+      <div className="container-page pt-28 pb-24">
+        <div className="max-w-3xl">
           <p
             className="intro inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 py-1.5 ps-3 pe-3.5 text-[13px] text-muted backdrop-blur"
             style={delay(100)}
@@ -100,10 +99,6 @@ export default function Hero() {
             </span>
             <SocialLinks />
           </div>
-        </div>
-
-        <div className="lg:col-span-5">
-          <DashboardVisual />
         </div>
       </div>
 

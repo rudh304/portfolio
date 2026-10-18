@@ -67,11 +67,6 @@ export const content = {
       primary: 'View My Work',
       secondary: 'Get in Touch',
       scroll: 'Scroll',
-      dashboard: {
-        report: 'Report time',
-        reportSub: 'Days → minutes',
-        erd: 'Data model',
-      },
     },
     social: {
       findMe: 'Find me on',
@@ -227,11 +222,6 @@ export const content = {
       primary: 'شاهد مشاريعي',
       secondary: 'تواصل معي',
       scroll: 'مرّر للأسفل',
-      dashboard: {
-        report: 'وقت التقارير',
-        reportSub: 'من أيام إلى دقائق',
-        erd: 'نموذج البيانات',
-      },
     },
     social: {
       findMe: 'تجدني على',
