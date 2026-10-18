@@ -68,9 +68,6 @@ export const content = {
       secondary: 'Get in Touch',
       scroll: 'Scroll',
       dashboard: {
-        sales: 'Sales Overview',
-        period: 'Q3',
-        vsLast: 'vs last quarter',
         report: 'Report time',
         reportSub: 'Days → minutes',
         erd: 'Data model',
@@ -107,11 +104,7 @@ export const content = {
           text: 'I design solutions people actually enjoy using.',
         },
       ],
-      stats: [
-        { value: '3', label: 'Certificates' },
-        { value: '72', label: 'Survey responses analyzed' },
-        { value: '2', label: 'Languages: Arabic & English' },
-      ],
+      stats: [{ value: '2', label: 'Languages: Arabic & English' }],
       photoAlt: 'Portrait of Raghd Al-Marshidi',
     },
     skills: {
@@ -235,9 +228,6 @@ export const content = {
       secondary: 'تواصل معي',
       scroll: 'مرّر للأسفل',
       dashboard: {
-        sales: 'نظرة على المبيعات',
-        period: 'الربع الثالث',
-        vsLast: 'مقارنة بالربع السابق',
         report: 'وقت التقارير',
         reportSub: 'من أيام إلى دقائق',
         erd: 'نموذج البيانات',
@@ -262,11 +252,7 @@ export const content = {
         { icon: 'chart', title: 'قرارات مبنية على البيانات', text: 'أحوّل الأرقام وآراء المستخدمين إلى رؤى واضحة.' },
         { icon: 'workflow', title: 'أنظمة بسيطة وفعّالة', text: 'أصمم حلولاً سهلة الاستخدام توفر الوقت والجهد.' },
       ],
-      stats: [
-        { value: '3', label: 'شهادات' },
-        { value: '72', label: 'استجابة استبيان حللتها' },
-        { value: '2', label: 'لغتان: العربية والإنجليزية' },
-      ],
+      stats: [{ value: '2', label: 'لغتان: العربية والإنجليزية' }],
       photoAlt: 'صورة رغد المرشدي',
     },
     skills: {

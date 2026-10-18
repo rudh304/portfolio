@@ -1,38 +1,7 @@
 import { useLang } from '../i18n/LanguageContext'
 
-const BARS = [38, 52, 44, 63, 58, 72, 66, 84, 78, 92, 88, 100]
-
 const cardClass =
   'rounded-2xl border border-line bg-surface/80 shadow-[0_24px_60px_-24px_var(--shadow-strong)] backdrop-blur-md'
-
-function SalesCard({ d }) {
-  return (
-    <div className={`${cardClass} p-5`}>
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-sm font-medium text-fg">{d.sales}</p>
-        <span className="rounded-md bg-surface-2 px-2 py-0.5 text-xs text-muted">{d.period}</span>
-      </div>
-      <div className="mt-3 flex items-baseline gap-2">
-        <span dir="ltr" className="font-display text-3xl font-semibold text-fg">
-          +24%
-        </span>
-        <span className="text-xs text-success">▲ {d.vsLast}</span>
-      </div>
-      {/* Time runs left → right in both languages */}
-      <div dir="ltr" className="mt-5 flex h-24 items-end gap-1.5">
-        {BARS.map((h, i) => (
-          <span
-            key={i}
-            className={`bar flex-1 rounded-t-[3px] ${
-              i === BARS.length - 1 ? 'bg-linear-to-t from-accent to-cyan' : 'bg-line'
-            }`}
-            style={{ height: `${h}%`, animationDelay: `${1000 + i * 45}ms` }}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function ReportCard({ d }) {
   return (
@@ -80,18 +49,13 @@ export default function DashboardVisual() {
   const d = t.hero.dashboard
 
   return (
-    <div aria-hidden="true" className="relative mx-auto w-full max-w-md sm:h-[420px]">
-      <div className="intro-pop sm:absolute sm:end-0 sm:top-2 sm:w-[80%]" style={{ animationDelay: '900ms' }}>
-        <div className="float-a">
-          <SalesCard d={d} />
-        </div>
-      </div>
-      <div className="intro-pop absolute start-0 top-[200px] hidden w-[46%] sm:block" style={{ animationDelay: '1000ms' }}>
+    <div aria-hidden="true" className="relative mx-auto flex w-full max-w-md flex-col gap-4 sm:block sm:h-[320px]">
+      <div className="intro-pop sm:absolute sm:end-0 sm:top-4 sm:w-[58%]" style={{ animationDelay: '900ms' }}>
         <div className="float-b">
           <ReportCard d={d} />
         </div>
       </div>
-      <div className="intro-pop absolute end-2 top-[268px] hidden w-[50%] sm:block" style={{ animationDelay: '1100ms' }}>
+      <div className="intro-pop sm:absolute sm:start-0 sm:top-[150px] sm:w-[68%]" style={{ animationDelay: '1000ms' }}>
         <div className="float-c">
           <ErdCard d={d} />
         </div>

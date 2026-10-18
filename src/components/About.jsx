@@ -55,9 +55,9 @@ export default function About() {
               ))}
             </Reveal>
 
-            <Reveal delay={140} className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+            <Reveal delay={140} className="mt-10 flex flex-wrap gap-4">
               {a.stats.map((s) => (
-                <div key={s.label} className="bg-surface p-5">
+                <div key={s.label} className="card px-6 py-5">
                   <p dir="ltr" className="font-display text-3xl font-semibold text-fg rtl:text-end">
                     {s.value}
                   </p>
