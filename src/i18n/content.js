@@ -7,7 +7,6 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/raghd-n-almrshdi-a95a38389',
   x: 'https://x.com/rudhalmrshdi',
   github: '', // optional (hidden when empty)
-  photo: '/raghd.jpg', // add public/raghd.jpg (falls back to a monogram)
 }
 
 // Shared, language-independent project data. Text lives under content[lang].projects.items[id].
@@ -100,7 +99,6 @@ export const content = {
         },
       ],
       stats: [{ value: '2', label: 'Languages: Arabic & English' }],
-      photoAlt: 'Portrait of Raghd Al-Marshidi',
     },
     skills: {
       label: 'Skills',
@@ -243,7 +241,6 @@ export const content = {
         { icon: 'workflow', title: 'أنظمة بسيطة وفعّالة', text: 'أصمم حلولاً سهلة الاستخدام توفر الوقت والجهد.' },
       ],
       stats: [{ value: '2', label: 'لغتان: العربية والإنجليزية' }],
-      photoAlt: 'صورة رغد المرشدي',
     },
     skills: {
       label: 'المهارات',

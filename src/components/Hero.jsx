@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
-import { ArrowIcon, ChevronDownIcon } from './Icons'
+import { ArrowIcon, ChevronDownIcon, GraduationCapIcon } from './Icons'
 import HeroBackground from './HeroBackground'
 import SocialLinks from './SocialLinks'
 
@@ -54,7 +54,11 @@ export default function Hero() {
           </p>
 
           <h1 className="mt-3">
-            <span className="intro block font-display text-lg font-medium text-muted sm:text-xl" style={delay(220)}>
+            <span
+              className="intro flex items-center gap-2 font-display text-lg font-medium text-muted sm:text-xl"
+              style={delay(220)}
+            >
+              <GraduationCapIcon className="size-5 shrink-0 text-accent-fg sm:size-6" />
               {h.name}
             </span>
             <span className="tracking-display leading-display mt-2 block font-display text-[clamp(2.4rem,5.6vw,4.5rem)] font-semibold text-balance text-fg">

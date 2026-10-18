@@ -1,34 +1,9 @@
-import { useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
-import { links } from '../i18n/content'
-import { ChartIcon, GraduationCapIcon, TargetIcon, WorkflowIcon } from './Icons'
+import { ChartIcon, TargetIcon, WorkflowIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
 const PRINCIPLE_ICONS = { target: TargetIcon, chart: ChartIcon, workflow: WorkflowIcon }
-
-function Portrait({ alt }) {
-  const [failed, setFailed] = useState(false)
-  return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-surface">
-      {failed ? (
-        // Fallback until public/raghd.jpg is added
-        <div className="bg-dot-grid grid size-full place-items-center bg-linear-to-br from-accent/20 via-surface to-cyan/10">
-          <GraduationCapIcon className="size-28 text-accent-fg" strokeWidth="1.25" />
-        </div>
-      ) : (
-        <img
-          src={links.photo}
-          alt={alt}
-          loading="lazy"
-          onError={() => setFailed(true)}
-          className="size-full object-cover grayscale-[15%]"
-        />
-      )}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/5 ring-inset" />
-    </div>
-  )
-}
 
 export default function About() {
   const { t } = useLang()
@@ -39,12 +14,8 @@ export default function About() {
       <div className="container-page">
         <SectionHeading index={1} label={a.label} title={a.heading} />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="mx-auto w-full max-w-sm lg:col-span-4 lg:max-w-none">
-            <Portrait alt={a.photoAlt} />
-          </Reveal>
-
-          <div className="lg:col-span-8">
+        <div className="mt-14">
+          <div className="max-w-3xl">
             <Reveal delay={80} className="space-y-5">
               {a.bio.map((p, i) => (
                 <p key={i} className={`text-body text-pretty ${i === 0 ? 'text-xl text-fg' : 'text-lg text-muted'}`}>
