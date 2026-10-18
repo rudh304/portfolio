@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
 import { links } from '../i18n/content'
-import { ChartIcon, DownloadIcon, TargetIcon, WorkflowIcon } from './Icons'
+import { ChartIcon, TargetIcon, WorkflowIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
@@ -55,7 +55,7 @@ export default function About() {
               ))}
             </Reveal>
 
-            <Reveal delay={140} className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4">
+            <Reveal delay={140} className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
               {a.stats.map((s) => (
                 <div key={s.label} className="bg-surface p-5">
                   <p dir="ltr" className="font-display text-3xl font-semibold text-fg rtl:text-end">
@@ -64,13 +64,6 @@ export default function About() {
                   <p className="mt-1 text-sm text-muted">{s.label}</p>
                 </div>
               ))}
-            </Reveal>
-
-            <Reveal delay={200} className="mt-8">
-              <a href={links.resume} download className="btn btn-secondary group">
-                <DownloadIcon className="size-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-                {a.resume}
-              </a>
             </Reveal>
           </div>
         </div>

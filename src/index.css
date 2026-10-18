@@ -24,6 +24,46 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Non-color effect tokens (dark defaults) */
+:root {
+  --dot-color: rgb(237 237 239 / 0.09);
+  --shadow-strong: rgb(0 0 0 / 0.8);
+  --shadow-soft: rgb(0 0 0 / 0.45);
+  --net-line: 161, 161, 170;
+  --net-line-alpha: 0.14;
+  --net-node: rgba(237, 237, 239, 0.22);
+  --net-accent: rgba(160, 140, 255, 0.7);
+  --mock-stroke: #3a3a42;
+}
+
+/* Light theme: same token names, so every utility switches automatically */
+:root[data-theme="light"] {
+  --color-base: #fafaf9;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f4f5;
+  --color-line: #e4e4e7;
+  --color-fg: #0c0a09;
+  --color-muted: #52525b;
+  --color-subtle: #71717a;
+  --color-accent: #6d4aff;
+  --color-accent-strong: #6340f0;
+  --color-accent-fg: #5534e0;
+  --color-cyan: #0891b2;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #dc2626;
+
+  --dot-color: rgb(12 10 9 / 0.07);
+  --shadow-strong: rgb(24 24 27 / 0.16);
+  --shadow-soft: rgb(24 24 27 / 0.1);
+  --net-line: 82, 82, 91;
+  --net-line-alpha: 0.12;
+  --net-node: rgba(12, 10, 9, 0.18);
+  --net-accent: rgba(99, 64, 240, 0.6);
+  --mock-stroke: #d4d4d8;
+  color-scheme: light;
+}
+
 /* Arabic swaps the type families; mono stays Latin for code-style labels */
 :root:lang(ar) {
   --font-sans: "IBM Plex Sans Arabic", "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -37,6 +77,19 @@
     background-color: var(--color-base);
     color-scheme: dark;
     -webkit-text-size-adjust: 100%;
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  /* Smooth color change when toggling the theme (class added only during the switch) */
+  .theme-transition,
+  .theme-transition * {
+    transition:
+      background-color 300ms ease,
+      border-color 300ms ease,
+      color 300ms ease,
+      fill 300ms ease !important;
   }
 
   body {
@@ -152,7 +205,7 @@
 }
 
 @utility bg-dot-grid {
-  background-image: radial-gradient(circle at 1px 1px, rgb(237 237 239 / 0.09) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, var(--dot-color) 1px, transparent 0);
   background-size: 24px 24px;
 }
 

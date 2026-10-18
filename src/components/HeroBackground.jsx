@@ -14,6 +14,24 @@ function NetworkCanvas() {
     let height = 0
     let frame = 0
     let running = false
+    let colors = {}
+
+    // Colors come from CSS tokens so the network follows light/dark mode
+    const readColors = () => {
+      const s = getComputedStyle(document.documentElement)
+      colors = {
+        line: s.getPropertyValue('--net-line').trim(),
+        lineAlpha: parseFloat(s.getPropertyValue('--net-line-alpha')) || 0.14,
+        node: s.getPropertyValue('--net-node').trim(),
+        accent: s.getPropertyValue('--net-accent').trim(),
+      }
+    }
+    readColors()
+    const themeObserver = new MutationObserver(() => {
+      readColors()
+      draw()
+    })
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -41,7 +59,7 @@ function NetworkCanvas() {
           const b = nodes[j]
           const d = Math.hypot(a.x - b.x, a.y - b.y)
           if (d < LINK_DIST) {
-            ctx.strokeStyle = `rgba(161,161,170,${(1 - d / LINK_DIST) * 0.14})`
+            ctx.strokeStyle = `rgba(${colors.line},${(1 - d / LINK_DIST) * colors.lineAlpha})`
             ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
@@ -51,7 +69,7 @@ function NetworkCanvas() {
         }
       }
       for (const n of nodes) {
-        ctx.fillStyle = n.accent ? 'rgba(160,140,255,0.7)' : 'rgba(237,237,239,0.22)'
+        ctx.fillStyle = n.accent ? colors.accent : colors.node
         ctx.beginPath()
         ctx.arc(n.x, n.y, n.accent ? 1.8 : 1.2, 0, Math.PI * 2)
         ctx.fill()
@@ -95,6 +113,7 @@ function NetworkCanvas() {
       stop()
       ro.disconnect()
       io.disconnect()
+      themeObserver.disconnect()
       document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])

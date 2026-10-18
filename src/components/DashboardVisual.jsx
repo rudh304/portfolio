@@ -3,7 +3,7 @@ import { useLang } from '../i18n/LanguageContext'
 const BARS = [38, 52, 44, 63, 58, 72, 66, 84, 78, 92, 88, 100]
 
 const cardClass =
-  'rounded-2xl border border-line bg-surface/80 shadow-[0_24px_60px_-24px_rgb(0_0_0/0.8)] backdrop-blur-md'
+  'rounded-2xl border border-line bg-surface/80 shadow-[0_24px_60px_-24px_var(--shadow-strong)] backdrop-blur-md'
 
 function SalesCard({ d }) {
   return (
@@ -54,18 +54,18 @@ function ErdCard({ d }) {
     <div className={`${cardClass} p-4`}>
       <p className="text-xs text-muted">{d.erd}</p>
       <svg dir="ltr" viewBox="0 0 200 72" className="mt-2 w-full" aria-hidden="true">
-        <path d="M44 36 H86 M114 36 H156" stroke="#3a3a42" strokeWidth="1.5" strokeDasharray="3 3" />
+        <path d="M44 36 H86 M114 36 H156" className="stroke-(--mock-stroke)" strokeWidth="1.5" strokeDasharray="3 3" />
         {[
           { x: 6, label: 'Orders' },
           { x: 81, label: 'Customers' },
           { x: 156, label: 'Products' },
         ].map((n, i) => (
           <g key={n.label}>
-            <rect x={n.x} y="20" width="38" height="32" rx="6" fill="#18181b" stroke={i === 1 ? '#7c5cff' : '#26262b'} />
-            <rect x={n.x + 6} y="28" width="20" height="3" rx="1.5" fill={i === 1 ? '#a08cff' : '#63636b'} />
-            <rect x={n.x + 6} y="36" width="26" height="2.5" rx="1.25" fill="#26262b" />
-            <rect x={n.x + 6} y="42" width="16" height="2.5" rx="1.25" fill="#26262b" />
-            <text x={n.x + 19} y="66" textAnchor="middle" fontSize="7.5" fill="#63636b" fontFamily="Geist Mono, monospace">
+            <rect x={n.x} y="20" width="38" height="32" rx="6" className={`fill-surface-2 ${i === 1 ? 'stroke-accent' : 'stroke-line'}`} />
+            <rect x={n.x + 6} y="28" width="20" height="3" rx="1.5" className={i === 1 ? 'fill-accent-fg' : 'fill-subtle'} />
+            <rect x={n.x + 6} y="36" width="26" height="2.5" rx="1.25" className="fill-line" />
+            <rect x={n.x + 6} y="42" width="16" height="2.5" rx="1.25" className="fill-line" />
+            <text x={n.x + 19} y="66" textAnchor="middle" fontSize="7.5" className="fill-subtle" fontFamily="Geist Mono, monospace">
               {n.label}
             </text>
           </g>

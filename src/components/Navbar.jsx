@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../i18n/LanguageContext'
-import { links } from '../i18n/content'
-import { CloseIcon, DownloadIcon, MenuIcon } from './Icons'
+import { useTheme } from '../hooks/useTheme'
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from './Icons'
 
-const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact']
+const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'certificates', 'contact']
+
+const iconButton =
+  'grid size-9 place-items-center rounded-lg border border-line text-muted transition-colors hover:border-accent/60 hover:text-fg'
 
 function useActiveSection() {
   const [active, setActive] = useState('home')
@@ -19,18 +22,33 @@ function useActiveSection() {
   return active
 }
 
-function LangToggle({ className = '' }) {
+function LangToggle() {
   const { t, toggle } = useLang()
+  const toEnglish = t.nav.switchTo === 'EN'
   return (
     <button
       type="button"
       onClick={toggle}
       aria-label={t.nav.switchLabel}
       title={t.nav.switchLabel}
-      className={`grid h-9 min-w-9 place-items-center rounded-lg border border-line px-2.5 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:text-fg ${className}`}
+      className={`${iconButton} w-auto min-w-9 px-2.5 text-sm font-medium`}
     >
-      <span lang={t.nav.switchTo === 'EN' ? 'en' : 'ar'} className={t.nav.switchTo === 'EN' ? 'font-mono text-xs' : ''}>
+      <span lang={toEnglish ? 'en' : 'ar'} className={toEnglish ? 'font-mono text-xs' : ''}>
         {t.nav.switchTo}
+      </span>
+    </button>
+  )
+}
+
+function ThemeToggle() {
+  const { t } = useLang()
+  const [theme, toggle] = useTheme()
+  const label = theme === 'light' ? t.nav.themeToDark : t.nav.themeToLight
+  return (
+    <button type="button" onClick={toggle} aria-label={label} title={label} className={`${iconButton} overflow-hidden`}>
+      {/* Shows the mode you'll switch to: sun in dark mode, moon in light mode */}
+      <span key={theme} className="grid place-items-center motion-safe:animate-[pop-in_0.4s_var(--ease-out-expo)]">
+        {theme === 'light' ? <MoonIcon className="size-4" /> : <SunIcon className="size-4" />}
       </span>
     </button>
   )
@@ -75,7 +93,7 @@ export default function Navbar() {
             <span className="text-accent">.</span>
           </a>
 
-          <ul className="hidden items-center gap-1 md:flex">
+          <ul className="hidden items-center gap-1 lg:flex">
             {t.nav.links.map((l) => {
               const isActive = active === l.id
               return (
@@ -100,18 +118,15 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <LangToggle />
-            <a href={links.resume} download className="btn btn-secondary btn-sm hidden sm:inline-flex">
-              {t.nav.resume}
-              <DownloadIcon className="size-3.5" />
-            </a>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-              className="grid size-9 place-items-center rounded-lg border border-line text-fg md:hidden"
+              className={`${iconButton} text-fg lg:hidden`}
             >
               {open ? <CloseIcon className="size-4" /> : <MenuIcon className="size-4" />}
             </button>
@@ -123,9 +138,9 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="fixed inset-x-0 top-16 bottom-0 z-40 bg-base/95 backdrop-blur-xl md:hidden"
+        className="fixed inset-x-0 top-16 bottom-0 z-40 bg-base/95 backdrop-blur-xl lg:hidden"
       >
-        <div className="container-page flex h-full flex-col justify-between py-8">
+        <div className="container-page py-8">
           <ul className="space-y-1">
             {t.nav.links.map((l, i) => (
               <li key={l.id}>
@@ -142,10 +157,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a href={links.resume} download className="btn btn-primary w-full">
-            {t.nav.resume}
-            <DownloadIcon />
-          </a>
         </div>
       </div>
     </>

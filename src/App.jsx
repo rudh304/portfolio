@@ -1,5 +1,6 @@
 import { LanguageProvider, useLang } from './i18n/LanguageContext'
 import About from './components/About'
+import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -24,6 +25,7 @@ function Site() {
         <About />
         <Skills />
         <Projects />
+        <Certificates />
         <Contact />
       </main>
       <Footer />

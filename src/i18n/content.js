@@ -1,57 +1,39 @@
 /*
  * All site copy lives here, in both languages.
- *
- * ⚠️ Before publishing, replace everything marked TODO / SAMPLE with real details:
- *    links, stats, and the three projects (they show the structure, not real work).
+ * Skills are still the general MIS toolkit from the first draft: adjust them to match your experience.
  */
 
 export const links = {
-  email: 'raghd@example.com', // TODO: your real email
-  linkedin: 'https://www.linkedin.com/in/your-profile', // TODO
-  github: 'https://github.com/your-username', // TODO
-  tableau: '', // optional: Tableau Public / Behance URL (hidden when empty)
-  calendly: '', // optional: booking link (hidden when empty)
-  resume: '/resume.pdf', // TODO: add public/resume.pdf
-  photo: '/raghd.jpg', // TODO: add public/raghd.jpg (falls back to a monogram)
+  linkedin: 'https://www.linkedin.com/in/raghd-n-almrshdi-a95a38389',
+  x: 'https://x.com/rudhalmrshdi',
+  github: '', // optional (hidden when empty)
+  photo: '/raghd.jpg', // add public/raghd.jpg (falls back to a monogram)
 }
 
 // Shared, language-independent project data. Text lives under content[lang].projects.items[id].
 export const projectList = [
   {
-    id: 'sales',
-    visual: 'dashboard', // dashboard | inventory | process
-    image: '', // optional screenshot path, e.g. '/projects/sales.png'
-    tags: ['Power BI', 'SQL', 'Excel', 'DAX'],
-    links: [
-      { type: 'live', href: '#' }, // SAMPLE: replace '#' with real URLs
-      { type: 'case', href: '#' },
-    ],
+    id: 'jarir',
+    visual: 'loyalty', // loyalty | dashboard | inventory | process
+    image: '', // optional screenshot path, e.g. '/projects/jarir.png'
+    tags: ['Requirements Analysis', 'Use Case', 'Class Diagram', 'BPMN', 'Database Design', 'UI Design'],
+    links: [{ type: 'report', href: '/projects/jarir-loyalty-system.pdf' }],
   },
-  {
-    id: 'inventory',
-    visual: 'inventory',
-    image: '',
-    tags: ['MySQL', 'PHP', 'JavaScript', 'ERD'],
-    links: [
-      { type: 'live', href: '#' },
-      { type: 'code', href: '#' },
-    ],
-  },
-  {
-    id: 'hr',
-    visual: 'process',
-    image: '',
-    tags: ['BPMN', 'UML', 'Figma', 'Systems Analysis'],
-    links: [{ type: 'report', href: '#' }],
-  },
+]
+
+// Text lives under content[lang].certificates.items[id]. `file` is optional (button hidden when empty).
+export const certificateList = [
+  { id: 'ai', icon: 'spark', file: '/certificates/sdaia-ai-fundamentals.pdf' },
+  { id: 'computer', icon: 'monitor', file: '' },
+  { id: 'english', icon: 'language', file: '' },
 ]
 
 export const content = {
   en: {
     meta: {
-      title: 'Raghd Al-Marshidi — MIS Specialist',
+      title: 'Raghd Al-Marshidi — MIS',
       description:
-        'MIS specialist focused on data analysis, systems analysis, and process improvement using Power BI and SQL.',
+        'Management Information Systems: data analysis, systems analysis, and process improvement.',
     },
     nav: {
       logo: 'Raghd',
@@ -59,11 +41,13 @@ export const content = {
         { id: 'about', label: 'About' },
         { id: 'skills', label: 'Skills' },
         { id: 'projects', label: 'Projects' },
+        { id: 'certificates', label: 'Certificates' },
         { id: 'contact', label: 'Contact' },
       ],
-      resume: 'Résumé',
       switchTo: 'ع',
       switchLabel: 'التبديل إلى العربية',
+      themeToLight: 'Switch to light mode',
+      themeToDark: 'Switch to dark mode',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
       skip: 'Skip to content',
@@ -71,7 +55,7 @@ export const content = {
     },
     hero: {
       status: 'Open to opportunities & internships',
-      eyebrow: 'MIS Specialist — Data & Systems',
+      eyebrow: 'Management Information Systems',
       name: 'Raghd Al-Marshidi',
       headline: [
         { text: 'Turning data into' },
@@ -94,19 +78,17 @@ export const content = {
     },
     social: {
       findMe: 'Find me on',
-      linkedin: 'LinkedIn profile',
-      github: 'GitHub profile',
-      tableau: 'Tableau Public',
-      email: 'Copy email address',
-      copied: 'Email copied ✓',
+      linkedin: 'LinkedIn',
+      x: 'X (Twitter)',
+      github: 'GitHub',
     },
     about: {
       label: 'About',
       heading: 'Fluent in business. Built for technology.',
       bio: [
-        'I studied Management Information Systems, and I’m passionate about turning business challenges into practical technology solutions.',
-        'I believe technology alone isn’t enough. Real value comes from understanding what an organization needs first, then choosing the right system to deliver it. That’s why every project I work on starts with analyzing processes and understanding users, then designing a solution with measurable results.',
-        'Today, I focus on data analysis and dashboards, database design, and improving business operations through digital systems.',
+        'I study Management Information Systems at Taif University, and I’m passionate about turning business challenges into practical technology solutions.',
+        'I believe technology alone isn’t enough. Real value comes from understanding what an organization needs first, then choosing the right system to deliver it. That’s why my work starts with analyzing processes and listening to users, then designing a solution around what they actually need.',
+        'Today, I focus on requirements analysis, system modeling, database design, and improving business operations through digital systems.',
       ],
       principles: [
         {
@@ -117,7 +99,7 @@ export const content = {
         {
           icon: 'chart',
           title: 'Data-driven decisions',
-          text: 'I turn raw numbers into clear insights leaders can act on.',
+          text: 'I turn raw numbers and user feedback into clear insights.',
         },
         {
           icon: 'workflow',
@@ -125,14 +107,11 @@ export const content = {
           text: 'I design solutions people actually enjoy using.',
         },
       ],
-      // SAMPLE values: replace with your real numbers
       stats: [
-        { value: '10+', label: 'Projects completed' },
-        { value: '4', label: 'Certifications' },
-        { value: '2', label: 'Internships' },
+        { value: '3', label: 'Certificates' },
+        { value: '72', label: 'Survey responses analyzed' },
         { value: '2', label: 'Languages: Arabic & English' },
       ],
-      resume: 'Download Résumé (PDF)',
       photoAlt: 'Portrait of Raghd Al-Marshidi',
     },
     skills: {
@@ -150,64 +129,65 @@ export const content = {
       softTitle: 'Soft skills',
       soft: ['Problem Solving', 'Communication', 'Teamwork', 'Analytical Thinking', 'Presentation'],
       learningTitle: 'Currently learning',
-      learning: ['AI for Data Analysis', 'Microsoft PL-300'],
+      learning: ['AI for Data Analysis'],
     },
     projects: {
       label: 'Projects',
-      heading: 'Projects that solve real problems.',
-      intro: 'Each one starts with a business problem and ends with a working solution.',
+      heading: 'From real problem to complete system design.',
+      intro: 'Field research with a real business, carried through every stage of analysis and design.',
       featured: 'Featured',
       labels: { challenge: 'Challenge', solution: 'Solution', result: 'Result' },
-      actions: { live: 'Live Demo', code: 'Source Code', report: 'View Report', case: 'Case Study' },
-      more: 'Want to see more?',
-      moreLink: 'Explore all projects on GitHub',
-      // SAMPLE projects: replace with your real work
+      actions: { live: 'Live Demo', code: 'Source Code', report: 'View Project (PDF)', case: 'Case Study' },
       items: {
-        sales: {
-          title: 'Sales Analytics Dashboard',
+        jarir: {
+          meta: 'Taif University · MIS · Team project · 2025/2026',
+          title: 'Jarir Loyalty & Rewards System',
           summary:
-            'An interactive dashboard tracking sales, products, and regional performance to support management decisions.',
-          challenge: 'Management relied on manual Excel reports that took days to prepare.',
-          solution: 'Cleaned the data with SQL, then built a data model and an interactive Power BI dashboard.',
-          result: 'Reporting time went from days to minutes',
+            'A redesign of Jarir Bookstore’s loyalty program: from a fixed-discount card to an in-app platform with points, membership tiers, and personalized rewards.',
+          challenge:
+            'The current program is a fixed-discount card with only two spend-based levels and limited external partnerships. There is no real points or rewards system.',
+          solution:
+            'Interviewed the Taif branch manager and surveyed 72 customers, defined requirements for customers, employees, and admins, then modeled the system with Use Case, Class, and BPMN diagrams.',
+          result:
+            'A complete system design: Bronze, Silver, and Gold tiers, points earning and redemption, smart notifications, a 9-table database, and interfaces for every user.',
+          highlights: ['Manager interview', '72-customer survey', 'UML & BPMN models', '9-table database', '4 interface designs'],
         },
-        inventory: {
-          title: 'Inventory Management System',
-          summary: 'A web-based system to track products, stock levels, and suppliers, with low-stock alerts.',
-          challenge: 'Frequent manual counting errors and unexpected stock-outs.',
-          solution: 'Gathered requirements, designed the database (ERD), and built a user-friendly system.',
-          result: 'Fewer counting errors and early low-stock warnings',
+      },
+    },
+    certificates: {
+      label: 'Certificates',
+      heading: 'Always learning, always certified.',
+      intro: 'Courses that strengthen my foundation in technology, data, and communication.',
+      view: 'View certificate',
+      items: {
+        ai: {
+          title: 'Fundamentals of Artificial Intelligence',
+          issuer: 'SDAIA — Saudi Data & AI Authority',
+          date: 'September 2025',
+          detail: 'Part of the “One Million Saudis in AI” initiative',
         },
-        hr: {
-          title: 'Recruitment Process Redesign',
-          summary: 'An analysis of an HR hiring process, with a proposed digital system to replace paperwork.',
-          challenge: 'A slow hiring process that depended on paperwork and long email chains.',
-          solution: 'Mapped the current and future processes in BPMN, then designed UML models and a prototype.',
-          result: 'A simpler, fully digital hiring flow',
+        computer: {
+          title: 'Basic Computer Skills',
+          issuer: 'International Academy for Training',
+          date: '2025',
+          detail: '60 hours · Score 100/100',
+        },
+        english: {
+          title: 'Basic English Course',
+          issuer: 'International Academy for Training',
+          date: '2025',
+          detail: '60 hours · Score 100/100',
         },
       },
     },
     contact: {
       label: 'Contact',
       heading: 'Let’s turn ideas into systems that work.',
-      text: 'I’m currently looking for full-time roles, internships, and freelance projects in data analysis, systems analysis, and process improvement. If you have an opportunity or an idea, I’d love to hear from you.',
-      emailLabel: 'Email',
-      copy: 'Copy',
-      copied: 'Copied ✓',
-      sendEmail: 'Send an Email',
-      bookCall: 'Book a 15-min Call',
-      response: 'I usually reply within 24 hours.',
-      form: {
-        title: 'Send a message',
-        name: 'Name',
-        namePh: 'Your name',
-        email: 'Email',
-        emailPh: 'you@company.com',
-        message: 'Message',
-        messagePh: 'Tell me about the opportunity or project…',
-        submit: 'Send Message',
-        success: 'Thanks for reaching out! Your email app is opening with the message ready to send.',
-        subject: 'Portfolio inquiry from',
+      text: 'I’m currently looking for opportunities and internships in data analysis, systems analysis, and process improvement. If you have an opportunity or an idea, I’d love to hear from you.',
+      channels: {
+        linkedin: { label: 'LinkedIn', hint: 'Connect professionally' },
+        x: { label: 'X (Twitter)', hint: '@rudhalmrshdi' },
+        github: { label: 'GitHub', hint: 'See my code' },
       },
     },
     footer: {
@@ -221,8 +201,7 @@ export const content = {
   ar: {
     meta: {
       title: 'رغد المرشدي — نظم المعلومات الإدارية',
-      description:
-        'نظم المعلومات الإدارية: تحليل البيانات، وتحليل النظم، وتحسين العمليات باستخدام Power BI وSQL.',
+      description: 'نظم المعلومات الإدارية: تحليل البيانات، وتحليل النظم، وتحسين العمليات.',
     },
     nav: {
       logo: 'رغد',
@@ -230,11 +209,13 @@ export const content = {
         { id: 'about', label: 'عنّي' },
         { id: 'skills', label: 'المهارات' },
         { id: 'projects', label: 'المشاريع' },
+        { id: 'certificates', label: 'الشهادات' },
         { id: 'contact', label: 'تواصل' },
       ],
-      resume: 'السيرة الذاتية',
       switchTo: 'EN',
       switchLabel: 'Switch to English',
+      themeToLight: 'التبديل إلى الوضع الساطع',
+      themeToDark: 'التبديل إلى الوضع الداكن',
       openMenu: 'فتح القائمة',
       closeMenu: 'إغلاق القائمة',
       skip: 'تخطَّ إلى المحتوى',
@@ -242,7 +223,7 @@ export const content = {
     },
     hero: {
       status: 'أرحّب بفرص العمل والتدريب',
-      eyebrow: 'نظم المعلومات الإدارية · بيانات وأنظمة',
+      eyebrow: 'نظم المعلومات الإدارية',
       name: 'رغد المرشدي',
       headline: [
         { text: 'أحوّل البيانات إلى' },
@@ -264,33 +245,28 @@ export const content = {
     },
     social: {
       findMe: 'تجدني على',
-      linkedin: 'حساب LinkedIn',
-      github: 'حساب GitHub',
-      tableau: 'Tableau Public',
-      email: 'نسخ البريد الإلكتروني',
-      copied: 'تم نسخ البريد ✓',
+      linkedin: 'LinkedIn',
+      x: 'X (تويتر)',
+      github: 'GitHub',
     },
     about: {
       label: 'عنّي',
       heading: 'أفهم لغة الإدارة، وأتحدث لغة التقنية.',
       bio: [
-        'درستُ نظم المعلومات الإدارية، وشغفي هو تحويل التحديات الإدارية إلى حلول تقنية عملية.',
-        'أؤمن أن التقنية وحدها لا تكفي؛ فالقيمة الحقيقية تأتي من فهم احتياج المؤسسة أولاً، ثم اختيار النظام المناسب لها. لذلك أبدأ كل مشروع بتحليل العمليات وفهم المستخدمين، ثم أصمم حلاً يحقق نتائج قابلة للقياس.',
-        'أركّز اليوم على تحليل البيانات وبناء لوحات المعلومات، وتصميم قواعد البيانات، وتحسين العمليات الإدارية بالأنظمة الرقمية.',
+        'أدرس نظم المعلومات الإدارية في جامعة الطائف، وشغفي هو تحويل التحديات الإدارية إلى حلول تقنية عملية.',
+        'أؤمن أن التقنية وحدها لا تكفي؛ فالقيمة الحقيقية تأتي من فهم احتياج المؤسسة أولاً، ثم اختيار النظام المناسب لها. لذلك أبدأ عملي بتحليل العمليات والاستماع للمستخدمين، ثم أصمم حلاً مبنياً على احتياجهم الفعلي.',
+        'أركّز اليوم على تحليل المتطلبات، ونمذجة الأنظمة، وتصميم قواعد البيانات، وتحسين العمليات الإدارية بالأنظمة الرقمية.',
       ],
       principles: [
         { icon: 'target', title: 'العمل أولاً، ثم التقنية', text: 'أفهم المشكلة الإدارية قبل اختيار الأداة.' },
-        { icon: 'chart', title: 'قرارات مبنية على البيانات', text: 'أحوّل الأرقام إلى رؤى واضحة يفهمها صانع القرار.' },
+        { icon: 'chart', title: 'قرارات مبنية على البيانات', text: 'أحوّل الأرقام وآراء المستخدمين إلى رؤى واضحة.' },
         { icon: 'workflow', title: 'أنظمة بسيطة وفعّالة', text: 'أصمم حلولاً سهلة الاستخدام توفر الوقت والجهد.' },
       ],
-      // SAMPLE values: replace with your real numbers
       stats: [
-        { value: '+10', label: 'مشاريع منجزة' },
-        { value: '4', label: 'شهادات احترافية' },
-        { value: '2', label: 'تدريب ميداني' },
+        { value: '3', label: 'شهادات' },
+        { value: '72', label: 'استجابة استبيان حللتها' },
         { value: '2', label: 'لغتان: العربية والإنجليزية' },
       ],
-      resume: 'تحميل السيرة الذاتية (PDF)',
       photoAlt: 'صورة رغد المرشدي',
     },
     skills: {
@@ -308,63 +284,65 @@ export const content = {
       softTitle: 'المهارات الشخصية',
       soft: ['حل المشكلات', 'التواصل الفعّال', 'العمل الجماعي', 'التفكير التحليلي', 'العرض والتقديم'],
       learningTitle: 'أتعلّم حالياً',
-      learning: ['تحليل البيانات بالذكاء الاصطناعي', 'Microsoft PL-300'],
+      learning: ['تحليل البيانات بالذكاء الاصطناعي'],
     },
     projects: {
       label: 'المشاريع',
-      heading: 'مشاريع تحل مشكلات حقيقية.',
-      intro: 'كل مشروع يبدأ بمشكلة إدارية وينتهي بحل يعمل.',
+      heading: 'من مشكلة حقيقية إلى تصميم نظام متكامل.',
+      intro: 'بحث ميداني مع منشأة حقيقية، مرّ بكل مراحل التحليل والتصميم.',
       featured: 'مميز',
       labels: { challenge: 'التحدي', solution: 'الحل', result: 'النتيجة' },
-      actions: { live: 'العرض المباشر', code: 'الكود المصدري', report: 'عرض التقرير', case: 'دراسة الحالة' },
-      more: 'تريد رؤية المزيد؟',
-      moreLink: 'استكشف كل مشاريعي على GitHub',
-      // SAMPLE projects: replace with your real work
+      actions: { live: 'العرض المباشر', code: 'الكود المصدري', report: 'عرض المشروع (PDF)', case: 'دراسة الحالة' },
       items: {
-        sales: {
-          title: 'لوحة تحليل المبيعات',
-          summary: 'لوحة معلومات تفاعلية تعرض أداء المبيعات والمنتجات والمناطق لدعم قرارات الإدارة.',
-          challenge: 'كانت الإدارة تعتمد على تقارير Excel يدوية يستغرق إعدادها أياماً.',
-          solution: 'نظّفت البيانات بـ SQL، ثم بنيت نموذج بيانات ولوحة تفاعلية في Power BI.',
-          result: 'وقت إعداد التقارير: من أيام إلى دقائق',
+        jarir: {
+          meta: 'جامعة الطائف · نظم المعلومات الإدارية · مشروع جماعي · الفصل الثاني 1447هـ',
+          title: 'تطوير نظام الولاء والمكافآت لجرير',
+          summary:
+            'إعادة تصميم برنامج الولاء في مكتبة جرير: من بطاقة خصم ثابت إلى منصة داخل التطبيق تعتمد على النقاط ومستويات العضوية والمكافآت المخصصة.',
+          challenge:
+            'يقتصر النظام الحالي على بطاقة خصم ثابت بمستويين فقط حسب قيمة المشتريات، مع شراكات خارجية محدودة، دون نظام نقاط أو مكافآت فعلي.',
+          solution:
+            'أجرينا مقابلة مع مدير فرع الطائف واستبياناً شمل 72 عميلاً، وحددنا المتطلبات الوظيفية للعميل والموظف ومسؤول النظام، ثم نمذجنا النظام بمخططات حالات الاستخدام والفصائل وBPMN.',
+          result:
+            'تصميم نظام متكامل: مستويات برونزي وفضي وذهبي، وتجميع النقاط واستبدالها، وإشعارات ذكية، وقاعدة بيانات من 9 جداول، وواجهات لكل مستخدم.',
+          highlights: ['مقابلة مع المدير', 'استبيان 72 عميلاً', 'نماذج UML وBPMN', 'قاعدة بيانات من 9 جداول', '4 واجهات مقترحة'],
         },
-        inventory: {
-          title: 'نظام إدارة المخزون',
-          summary: 'نظام ويب لتتبع المنتجات والكميات والموردين، مع تنبيهات عند انخفاض المخزون.',
-          challenge: 'أخطاء متكررة في الجرد اليدوي ونفاد المنتجات دون إنذار مسبق.',
-          solution: 'حللت المتطلبات، وصممت قاعدة البيانات (ERD)، وبنيت النظام بواجهة سهلة.',
-          result: 'أخطاء جرد أقل وتنبيهات مبكرة قبل نفاد المخزون',
+      },
+    },
+    certificates: {
+      label: 'الشهادات',
+      heading: 'تعلّم مستمر، وشهادات تثبته.',
+      intro: 'دورات تعزز أساسي في التقنية والبيانات والتواصل.',
+      view: 'عرض الشهادة',
+      items: {
+        ai: {
+          title: 'مبادئ الذكاء الاصطناعي',
+          issuer: 'الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)',
+          date: 'سبتمبر 2025',
+          detail: 'ضمن مبادرة مليون سعودي للذكاء الاصطناعي',
         },
-        hr: {
-          title: 'إعادة تصميم عملية التوظيف',
-          summary: 'دراسة تحليلية لعملية التوظيف في الموارد البشرية، مع نظام رقمي مقترح بدلاً من الورق.',
-          challenge: 'عملية توظيف بطيئة تعتمد على الورق وسلاسل طويلة من الرسائل.',
-          solution: 'رسمت العملية الحالية والمقترحة بـ BPMN، ثم صممت نماذج UML ونموذجاً أولياً.',
-          result: 'عملية توظيف أبسط ورقمية بالكامل',
+        computer: {
+          title: 'دورة الحاسب الآلي',
+          issuer: 'الأكاديمية العالمية الدولية للتدريب',
+          date: '2025',
+          detail: '60 ساعة · بدرجة 100/100',
+        },
+        english: {
+          title: 'دورة اللغة الإنجليزية',
+          issuer: 'الأكاديمية العالمية الدولية للتدريب',
+          date: '2025',
+          detail: '60 ساعة · بدرجة 100/100',
         },
       },
     },
     contact: {
       label: 'تواصل',
       heading: 'لنحوّل الأفكار إلى أنظمة تعمل.',
-      text: 'أبحث حالياً عن فرص عمل أو تدريب أو مشاريع مستقلة في تحليل البيانات وتحليل النظم وتحسين العمليات. إن كانت لديك فرصة أو فكرة، يسعدني أن أسمع منك.',
-      emailLabel: 'البريد الإلكتروني',
-      copy: 'نسخ',
-      copied: 'تم النسخ ✓',
-      sendEmail: 'أرسل بريداً إلكترونياً',
-      bookCall: 'احجز مكالمة لمدة 15 دقيقة',
-      response: 'أرد عادةً خلال 24 ساعة.',
-      form: {
-        title: 'أرسل رسالة',
-        name: 'الاسم',
-        namePh: 'اسمك',
-        email: 'البريد الإلكتروني',
-        emailPh: 'you@company.com',
-        message: 'الرسالة',
-        messagePh: 'حدّثني عن الفرصة أو المشروع…',
-        submit: 'أرسل الرسالة',
-        success: 'شكراً لتواصلك! يُفتح الآن تطبيق البريد والرسالة جاهزة للإرسال.',
-        subject: 'استفسار من الموقع —',
+      text: 'أبحث حالياً عن فرص عمل وتدريب في تحليل البيانات وتحليل النظم وتحسين العمليات. إن كانت لديك فرصة أو فكرة، يسعدني أن أسمع منك.',
+      channels: {
+        linkedin: { label: 'LinkedIn', hint: 'لنتواصل مهنياً' },
+        x: { label: 'X (تويتر)', hint: '@rudhalmrshdi' },
+        github: { label: 'GitHub', hint: 'اطّلع على أعمالي البرمجية' },
       },
     },
     footer: {
