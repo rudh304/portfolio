@@ -3,7 +3,7 @@ import { links } from '../i18n/content'
 import { ArrowUpRightIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
-import { SOCIALS } from './SocialLinks'
+import { SOCIALS, externalProps } from './SocialLinks'
 
 export default function Contact() {
   const { t } = useLang()
@@ -24,8 +24,7 @@ export default function Contact() {
             <Reveal key={key} delay={i * 80} className="grid">
               <a
                 href={links[key]}
-                target="_blank"
-                rel="noreferrer"
+                {...externalProps(links[key])}
                 className="card group flex items-center gap-4 p-5 transition-all duration-300 ease-out-expo hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-[0_20px_50px_-30px_var(--shadow-strong)]"
               >
                 <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent-fg transition-colors group-hover:bg-accent group-hover:text-white">

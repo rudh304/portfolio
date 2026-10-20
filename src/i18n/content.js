@@ -7,6 +7,7 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/raghd-n-almrshdi-a95a38389',
   x: 'https://x.com/rudhalmrshdi',
   github: '', // optional (hidden when empty)
+  email: 'mailto:raghdalmrshdi1@outlook.sa',
 }
 
 // Shared, language-independent project data. Text lives under content[lang].projects.items[id].
@@ -25,6 +26,9 @@ export const certificateList = [
   { id: 'ai', icon: 'spark', file: '/certificates/sdaia-ai-fundamentals.pdf' },
   { id: 'computer', icon: 'monitor', file: '' },
   { id: 'english', icon: 'language', file: '' },
+  { id: 'spe', icon: 'award', file: '' },
+  { id: 'bi', icon: 'chart', file: '' },
+  { id: 'writing', icon: 'book', file: '' },
 ]
 
 export const content = {
@@ -56,6 +60,7 @@ export const content = {
       status: 'Open to opportunities & internships',
       eyebrow: 'Management Information Systems',
       name: 'Raghd Al-Marshidi',
+      university: 'Taif University',
       headline: [
         { text: 'Turning data into' },
         { text: 'decisions,', accent: true },
@@ -72,6 +77,7 @@ export const content = {
       linkedin: 'LinkedIn',
       x: 'X (Twitter)',
       github: 'GitHub',
+      email: 'Email',
     },
     about: {
       label: 'About',
@@ -106,11 +112,18 @@ export const content = {
       intro: 'A focused toolkit I use to understand problems, model data, and deliver working systems.',
       groups: [
         { title: 'Data Analysis', items: ['Excel (Advanced)', 'Power BI', 'SQL', 'Python (Pandas)', 'Tableau'] },
-        { title: 'Systems Analysis & Design', items: ['Requirements Gathering', 'UML', 'ERD', 'BPMN', 'Use Cases'] },
+        {
+          title: 'Systems Analysis & Design',
+          items: ['Requirements Gathering', 'UML', 'ERD', 'BPMN', 'Use Case Diagrams', 'User Interface Design'],
+        },
         { title: 'Databases', items: ['MySQL', 'SQL Server', 'Database Design', 'Normalization'] },
         { title: 'Business Systems', items: ['ERP (SAP / Odoo)', 'CRM', 'Process Improvement'] },
         { title: 'Web Development', items: ['HTML', 'CSS', 'JavaScript', 'React'] },
         { title: 'Project Management', items: ['Agile', 'Scrum', 'Jira', 'Trello'] },
+        {
+          title: 'Office & AI Tools',
+          items: ['Microsoft Office', 'Microsoft Word', 'Microsoft PowerPoint', 'Microsoft Excel', 'AI Prompting'],
+        },
       ],
       softTitle: 'Soft skills',
       soft: ['Problem Solving', 'Communication', 'Teamwork', 'Analytical Thinking', 'Presentation'],
@@ -164,6 +177,24 @@ export const content = {
           date: '2025',
           detail: '60 hours · Score 100/100',
         },
+        spe: {
+          title: 'SPE Membership',
+          issuer: 'Society of Petroleum Engineers (SPE International)',
+          date: '2025',
+          detail: 'Member of SPE International since 2025',
+        },
+        bi: {
+          title: 'Business Intelligence Workshop',
+          issuer: 'Taif University · College of Computers and IT',
+          date: 'November 2024',
+          detail: 'Online workshop via the Maharat platform',
+        },
+        writing: {
+          title: 'Common Mistakes in Academic Theses',
+          issuer: 'Taif University · College of Arts',
+          date: 'November 2024',
+          detail: 'Online workshop via the Maharat platform',
+        },
       },
     },
     contact: {
@@ -174,6 +205,7 @@ export const content = {
         linkedin: { label: 'LinkedIn', hint: 'Connect professionally' },
         x: { label: 'X (Twitter)', hint: '@rudhalmrshdi' },
         github: { label: 'GitHub', hint: 'See my code' },
+        email: { label: 'Email', hint: 'raghdalmrshdi1@outlook.sa' },
       },
     },
     footer: {
@@ -211,6 +243,7 @@ export const content = {
       status: 'أرحّب بفرص العمل والتدريب',
       eyebrow: 'نظم المعلومات الإدارية',
       name: 'رغد المرشدي',
+      university: 'جامعة الطائف',
       headline: [
         { text: 'أحوّل البيانات إلى' },
         { text: 'قرارات،', accent: true },
@@ -226,6 +259,7 @@ export const content = {
       linkedin: 'LinkedIn',
       x: 'X (تويتر)',
       github: 'GitHub',
+      email: 'البريد الإلكتروني',
     },
     about: {
       label: 'عنّي',
@@ -248,11 +282,18 @@ export const content = {
       intro: 'مجموعة مركّزة من الأدوات أستخدمها لفهم المشكلات، ونمذجة البيانات، وتسليم أنظمة تعمل.',
       groups: [
         { title: 'تحليل البيانات', items: ['Excel (متقدم)', 'Power BI', 'SQL', 'Python (Pandas)', 'Tableau'] },
-        { title: 'تحليل وتصميم النظم', items: ['جمع المتطلبات', 'UML', 'ERD', 'BPMN', 'حالات الاستخدام'] },
+        {
+          title: 'تحليل وتصميم النظم',
+          items: ['جمع المتطلبات', 'UML', 'ERD', 'BPMN', 'مخططات حالات الاستخدام', 'تصميم واجهات المستخدم'],
+        },
         { title: 'قواعد البيانات', items: ['MySQL', 'SQL Server', 'تصميم قواعد البيانات', 'التطبيع (Normalization)'] },
         { title: 'أنظمة الأعمال', items: ['ERP (SAP / Odoo)', 'CRM', 'تحسين العمليات'] },
         { title: 'تطوير الويب', items: ['HTML', 'CSS', 'JavaScript', 'React'] },
         { title: 'إدارة المشاريع', items: ['Agile', 'Scrum', 'Jira', 'Trello'] },
+        {
+          title: 'أدوات المكتب والذكاء الاصطناعي',
+          items: ['Microsoft Office', 'Microsoft Word', 'Microsoft PowerPoint', 'Microsoft Excel', 'هندسة الأوامر (AI Prompting)'],
+        },
       ],
       softTitle: 'المهارات الشخصية',
       soft: ['حل المشكلات', 'التواصل الفعّال', 'العمل الجماعي', 'التفكير التحليلي', 'العرض والتقديم'],
@@ -306,6 +347,24 @@ export const content = {
           date: '2025',
           detail: '60 ساعة · بدرجة 100/100',
         },
+        spe: {
+          title: 'عضوية جمعية مهندسي البترول',
+          issuer: 'جمعية مهندسي البترول الدولية (SPE)',
+          date: '2025',
+          detail: 'عضو في SPE International منذ 2025',
+        },
+        bi: {
+          title: 'ورشة عمل ذكاء الأعمال',
+          issuer: 'جامعة الطائف · كلية الحاسبات وتقنية المعلومات',
+          date: 'نوفمبر 2024',
+          detail: 'ورشة أونلاين عبر منصة مهارات',
+        },
+        writing: {
+          title: 'الأخطاء الشائعة في الرسائل العلمية',
+          issuer: 'جامعة الطائف · كلية الآداب',
+          date: 'نوفمبر 2024',
+          detail: 'ورشة أونلاين عبر منصة مهارات',
+        },
       },
     },
     contact: {
@@ -316,6 +375,7 @@ export const content = {
         linkedin: { label: 'LinkedIn', hint: 'لنتواصل مهنياً' },
         x: { label: 'X (تويتر)', hint: '@rudhalmrshdi' },
         github: { label: 'GitHub', hint: 'اطّلع على أعمالي البرمجية' },
+        email: { label: 'البريد الإلكتروني', hint: 'raghdalmrshdi1@outlook.sa' },
       },
     },
     footer: {

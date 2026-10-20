@@ -38,30 +38,42 @@ export default function Hero() {
 
       <div className="container-page pt-28 pb-24">
         <div className="max-w-3xl">
-          <p
-            className="intro inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 py-1.5 ps-3 pe-3.5 text-[13px] text-muted backdrop-blur"
+          {/* Identity card: name, major, university, availability */}
+          <div
+            className="intro card relative max-w-md overflow-hidden bg-surface/70 shadow-[0_24px_60px_-36px_var(--shadow-strong)] backdrop-blur"
             style={delay(100)}
           >
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-success opacity-60 motion-reduce:animate-none" />
-              <span className="relative inline-flex size-2 rounded-full bg-success" />
-            </span>
-            {h.status}
-          </p>
-
-          <p className="eyebrow intro mt-6 text-accent-fg" style={delay(200)}>
-            {h.eyebrow}
-          </p>
-
-          <h1 className="mt-3">
             <span
-              className="intro flex items-center gap-2 font-display text-lg font-medium text-muted sm:text-xl"
-              style={delay(220)}
-            >
-              <GraduationCapIcon className="size-5 shrink-0 text-accent-fg sm:size-6" />
-              {h.name}
-            </span>
-            <span className="tracking-display leading-display mt-2 block font-display text-[clamp(2.4rem,5.6vw,4.5rem)] font-semibold text-balance text-fg">
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent"
+            />
+            <div className="flex items-center gap-4 p-5">
+              <span
+                aria-hidden="true"
+                className="grid size-14 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-strong to-cyan font-display text-2xl font-semibold text-white"
+              >
+                {h.name[0]}
+              </span>
+              <div className="min-w-0">
+                <p className="font-display text-xl font-semibold text-fg sm:text-2xl">{h.name}</p>
+                <p className="mt-1 flex items-center gap-1.5 text-sm font-medium text-accent-fg">
+                  <GraduationCapIcon className="size-4 shrink-0" />
+                  {h.eyebrow}
+                </p>
+                <p className="mt-0.5 text-[13px] text-subtle">{h.university}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 border-t border-line bg-surface-2/50 px-5 py-2.5 text-[13px] text-muted">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-success opacity-60 motion-reduce:animate-none" />
+                <span className="relative inline-flex size-2 rounded-full bg-success" />
+              </span>
+              {h.status}
+            </div>
+          </div>
+
+          <h1 className="mt-8">
+            <span className="tracking-display leading-display block font-display text-[clamp(2.4rem,5.6vw,4.5rem)] font-semibold text-balance text-fg">
               {h.headline.map((part, p) =>
                 part.text.split(' ').map((word, w) => {
                   const i = wordIndex++

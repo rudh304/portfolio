@@ -1,10 +1,10 @@
 import { useLang } from '../i18n/LanguageContext'
 import { certificateList } from '../i18n/content'
-import { ArrowUpRightIcon, AwardIcon, LanguagesIcon, MonitorIcon, SparkIcon } from './Icons'
+import { ArrowUpRightIcon, AwardIcon, BookIcon, ChartIcon, LanguagesIcon, MonitorIcon, SparkIcon } from './Icons'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-const ICONS = { spark: SparkIcon, monitor: MonitorIcon, language: LanguagesIcon }
+const ICONS = { spark: SparkIcon, monitor: MonitorIcon, language: LanguagesIcon, chart: ChartIcon, book: BookIcon }
 
 export default function Certificates() {
   const { t } = useLang()

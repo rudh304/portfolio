@@ -1,12 +1,16 @@
 import { useLang } from '../i18n/LanguageContext'
 import { links } from '../i18n/content'
-import { GitHubIcon, LinkedInIcon, XIcon } from './Icons'
+import { GitHubIcon, LinkedInIcon, MailIcon, XIcon } from './Icons'
 
 export const SOCIALS = [
   { key: 'linkedin', Icon: LinkedInIcon },
   { key: 'x', Icon: XIcon },
   { key: 'github', Icon: GitHubIcon },
+  { key: 'email', Icon: MailIcon },
 ].filter((s) => links[s.key])
+
+// mailto: links open the mail app, not a new tab
+export const externalProps = (href) => (href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })
 
 const iconBtn =
   'group/s relative grid size-10 place-items-center rounded-[10px] border border-line text-muted transition-all duration-200 ease-out-expo hover:-translate-y-0.5 hover:border-accent/60 hover:text-fg'
@@ -18,7 +22,7 @@ export default function SocialLinks({ className = '' }) {
     <ul className={`flex items-center gap-2 ${className}`}>
       {SOCIALS.map(({ key, Icon }) => (
         <li key={key}>
-          <a href={links[key]} target="_blank" rel="noreferrer" aria-label={t.social[key]} className={iconBtn}>
+          <a href={links[key]} {...externalProps(links[key])} aria-label={t.social[key]} className={iconBtn}>
             <Icon />
             <span
               role="presentation"
