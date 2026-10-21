@@ -85,7 +85,56 @@ function DashboardMock() {
   )
 }
 
-const MOCKS = { loyalty: LoyaltyMock, dashboard: DashboardMock }
+function SecurityMock() {
+  // Floor plan: rooms tinted by security zone (Z0 public → Z4 restricted), camera dots on top
+  const zones = ['bg-success/15', 'bg-cyan/15', 'bg-accent/15', 'bg-warning/20', 'bg-danger/20']
+  const rooms = [
+    { z: 0, cls: 'col-span-2' },
+    { z: 1, cls: '' },
+    { z: 2, cls: '' },
+    { z: 1, cls: '' },
+    { z: 3, cls: 'col-span-2' },
+    { z: 4, cls: 'row-span-2', cam: true },
+    { z: 2, cls: '', cam: true },
+    { z: 3, cls: '' },
+    { z: 4, cls: 'col-span-2', cam: true },
+  ]
+  return (
+    <div className="flex h-full flex-col gap-2.5 text-[10px] text-muted">
+      <div className="flex items-center gap-2">
+        <span className="grid size-7 place-items-center rounded-lg bg-accent/15 text-accent-fg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-4">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          </svg>
+        </span>
+        <div className="space-y-1">
+          <div className="h-1.5 w-14 rounded-full bg-fg/30" />
+          <div className="h-1 w-10 rounded-full bg-subtle/50" />
+        </div>
+        <span className="ms-auto rounded-full border border-line px-2 py-0.5 font-mono">A-102</span>
+      </div>
+
+      <div className="grid flex-1 grid-cols-4 grid-rows-3 gap-1 rounded-lg border border-line bg-surface-2 p-1.5">
+        {rooms.map((r, i) => (
+          <div key={i} className={`relative rounded-[5px] border border-line/80 ${zones[r.z]} ${r.cls}`}>
+            <span className="absolute start-1 top-0.5 font-mono text-[8px] text-subtle">Z{r.z}</span>
+            {r.cam && <span className="absolute end-1 bottom-1 size-1.5 rounded-full bg-danger" />}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-between font-mono text-[9px]">
+        {zones.map((z, i) => (
+          <span key={i} className="flex items-center gap-1">
+            <span className={`size-2 rounded-sm ${z}`} />Z{i}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const MOCKS = { loyalty: LoyaltyMock, dashboard: DashboardMock, security: SecurityMock }
 
 export default function ProjectVisual({ project, alt }) {
   const Mock = MOCKS[project.visual] ?? DashboardMock

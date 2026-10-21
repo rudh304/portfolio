@@ -5,9 +5,9 @@ import ProjectVisual from './ProjectVisual'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-const ACTION_ICONS = { live: ArrowUpRightIcon, code: CodeIcon, report: FileIcon, case: BookIcon }
+const ACTION_ICONS = { live: ArrowUpRightIcon, code: CodeIcon, report: FileIcon, case: BookIcon, site: ArrowUpRightIcon }
 
-function ProjectCard({ project, index, featured }) {
+function ProjectCard({ project, index, featured, wide }) {
   const { t } = useLang()
   const p = t.projects
   const text = p.items[project.id]
@@ -15,10 +15,10 @@ function ProjectCard({ project, index, featured }) {
   return (
     <article
       className={`card group relative flex flex-col gap-6 p-4 transition-all duration-500 ease-out-expo hover:border-accent/40 hover:shadow-[0_30px_80px_-40px_rgb(124_92_255/0.45)] sm:p-5 ${
-        featured ? 'lg:grid lg:grid-cols-2 lg:items-start lg:gap-10' : ''
+        wide ? 'lg:grid lg:grid-cols-2 lg:items-start lg:gap-10' : ''
       }`}
     >
-      <div className={featured ? 'lg:sticky lg:top-24' : ''}>
+      <div className={wide ? 'lg:sticky lg:top-24' : ''}>
         <ProjectVisual project={project} alt={text.title} />
         {text.highlights && (
           <ul className="mt-4 flex flex-wrap gap-2">
@@ -100,15 +100,19 @@ export default function Projects() {
         <SectionHeading index={3} label={p.label} title={p.heading} intro={p.intro} />
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          {projectList.map((project, i) => (
-            <Reveal
-              key={project.id}
-              delay={i === 0 ? 0 : ((i - 1) % 2) * 100}
-              className={`grid ${i === 0 ? 'lg:col-span-2' : ''}`}
-            >
-              <ProjectCard project={project} index={i} featured={i === 0} />
-            </Reveal>
-          ))}
+          {projectList.map((project, i) => {
+            // The first project, and a last one left alone in its row, span the full width
+            const wide = i === 0 || (i === projectList.length - 1 && i % 2 === 1)
+            return (
+              <Reveal
+                key={project.id}
+                delay={i === 0 ? 0 : ((i - 1) % 2) * 100}
+                className={`grid ${wide ? 'lg:col-span-2' : ''}`}
+              >
+                <ProjectCard project={project} index={i} featured={i === 0} wide={wide} />
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>

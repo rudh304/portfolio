@@ -19,6 +19,13 @@ export const projectList = [
     tags: ['Requirements Analysis', 'Use Case', 'Class Diagram', 'BPMN', 'Database Design', 'UI Design'],
     links: [{ type: 'report', href: '/projects/jarir-loyalty-system.pdf' }],
   },
+  {
+    id: 'rasin',
+    visual: 'security',
+    image: '',
+    tags: ['Physical Security', 'Risk Management', 'CIA Triad', 'ECC-2:2024', 'ISO/IEC 27001', 'NIST SP 800-53'],
+    links: [{ type: 'site', href: 'https://rasin-presentation.vercel.app/' }],
+  },
 ]
 
 // Text lives under content[lang].certificates.items[id]. `file` is optional (button hidden when empty).
@@ -133,10 +140,16 @@ export const content = {
     projects: {
       label: 'Projects',
       heading: 'From real problem to complete system design.',
-      intro: 'Field research with a real business, carried through every stage of analysis and design.',
+      intro: 'Team projects carried through every stage of analysis and design, from field research to standards-based solutions.',
       featured: 'Featured',
       labels: { challenge: 'Challenge', solution: 'Solution', result: 'Result' },
-      actions: { live: 'Live Demo', code: 'Source Code', report: 'View Project (PDF)', case: 'Case Study' },
+      actions: {
+        live: 'Live Demo',
+        code: 'Source Code',
+        report: 'View Project (PDF)',
+        case: 'Case Study',
+        site: 'View Interactive Presentation',
+      },
       items: {
         jarir: {
           meta: 'Taif University · MIS · Team project · 2025/2026',
@@ -150,6 +163,19 @@ export const content = {
           result:
             'A complete system design: Bronze, Silver, and Gold tiers, points earning and redemption, smart notifications, a 9-table database, and interfaces for every user.',
           highlights: ['Manager interview', '72-customer survey', 'UML & BPMN models', '9-table database', '4 interface designs'],
+        },
+        rasin: {
+          meta: 'Taif University · MIS · Information Security & Risk Management · Team of 6',
+          title: 'RASIN Integrated Security Center',
+          summary:
+            'A physical security design for a virtual cybersecurity center: a three-floor building secured in layers, presented as an interactive website.',
+          challenge:
+            'Valuable data is only as safe as the place it lives in. Without a secure physical environment, digital controls can be bypassed by anyone who reaches the servers or records.',
+          solution:
+            'Divided the building into 5 security zones (Z0–Z4) and combined physical barriers, surveillance, access control, guarding, and environmental protection, mapped to the CIA triad and to ECC-2:2024, ISO/IEC 27001:2022, and NIST SP 800-53.',
+          result:
+            'A complete design covering 54 rooms with 144 security devices, interactive floor plans, a permission matrix for 9 roles, and guided scenarios such as a night intrusion attempt.',
+          highlights: ['3 floors · 54 rooms', '144 security devices', '5 security zones', '46 cameras', '3 security standards'],
         },
       },
     },
@@ -303,10 +329,16 @@ export const content = {
     projects: {
       label: 'المشاريع',
       heading: 'من مشكلة حقيقية إلى تصميم نظام متكامل.',
-      intro: 'بحث ميداني مع منشأة حقيقية، مرّ بكل مراحل التحليل والتصميم.',
+      intro: 'مشاريع جماعية مرّت بكل مراحل التحليل والتصميم، من البحث الميداني إلى حلول مبنية على المعايير.',
       featured: 'مميز',
       labels: { challenge: 'التحدي', solution: 'الحل', result: 'النتيجة' },
-      actions: { live: 'العرض المباشر', code: 'الكود المصدري', report: 'عرض المشروع (PDF)', case: 'دراسة الحالة' },
+      actions: {
+        live: 'العرض المباشر',
+        code: 'الكود المصدري',
+        report: 'عرض المشروع (PDF)',
+        case: 'دراسة الحالة',
+        site: 'عرض المشروع التفاعلي',
+      },
       items: {
         jarir: {
           meta: 'جامعة الطائف · نظم المعلومات الإدارية · مشروع جماعي · الفصل الثاني 1447هـ',
@@ -320,6 +352,19 @@ export const content = {
           result:
             'تصميم نظام متكامل: مستويات برونزي وفضي وذهبي، وتجميع النقاط واستبدالها، وإشعارات ذكية، وقاعدة بيانات من 9 جداول، وواجهات لكل مستخدم.',
           highlights: ['مقابلة مع المدير', 'استبيان 72 عميلاً', 'نماذج UML وBPMN', 'قاعدة بيانات من 9 جداول', '4 واجهات مقترحة'],
+        },
+        rasin: {
+          meta: 'جامعة الطائف · نظم المعلومات الإدارية · أمن المعلومات وإدارة المخاطر · فريق من 6 طالبات',
+          title: 'مركز رَصين للأمن والحماية المتكاملة',
+          summary:
+            'تصميم أمن مادي لمركز افتراضي للأمن السيبراني: مبنى من ثلاثة طوابق محمي بطبقات متعددة، ومعروض كموقع تفاعلي.',
+          challenge:
+            'البيانات الثمينة لا تكون آمنة إلا إذا كان المكان الذي تُحفظ فيه آمناً؛ فبدون بيئة مادية محمية يمكن تجاوز الضوابط الرقمية بالوصول المباشر إلى الخوادم أو السجلات.',
+          solution:
+            'قسّمنا المبنى إلى 5 مناطق أمنية (Z0–Z4)، وجمعنا بين الحواجز المادية والمراقبة والتحكم بالوصول والحراسة والحماية البيئية، وربطنا التصميم بثلاثية CIA وبمعايير ECC-2:2024 وISO/IEC 27001:2022 وNIST SP 800-53.',
+          result:
+            'تصميم متكامل يغطي 54 غرفة بـ144 جهازاً أمنياً، مع مخططات طوابق تفاعلية، ومصفوفة صلاحيات لـ9 أدوار وظيفية، وسيناريوهات مثل محاولة اقتحام ليلية.',
+          highlights: ['3 طوابق · 54 غرفة', '144 جهازاً أمنياً', '5 مناطق أمنية', '46 كاميرا', '3 معايير أمنية'],
         },
       },
     },
